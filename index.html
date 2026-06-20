@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Dashboard Buang Dana</title>
+    <meta
+      name="description"
+      content="Dashboard utama buang dana dengan kontrol bank, pengaturan range sheet, dan pembacaan data horizontal maupun vertikal."
+    />
+    <link rel="stylesheet" href="./background.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <div class="desktop-background-layer" id="desktop-background-layer"></div>
+    <div class="desktop-background-layer desktop-background-layer-alt" id="desktop-background-layer-alt"></div>
+    <div class="desktop-background-overlay" id="desktop-background-overlay"></div>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-grid"></div>
+
+    <main class="dashboard-shell">
+      <section class="topbar">
+        <div class="stats-wrap">
+          <article class="stat-card small glow-card">
+            <span class="stat-label">Total Withdraw Ready</span>
+            <strong class="stat-value" id="total-ready">0</strong>
+          </article>
+          <article class="stat-card large glow-card">
+            <span class="stat-label">Total Amount</span>
+            <strong class="stat-value amount" id="total-amount">0</strong>
+          </article>
+        </div>
+
+        <aside class="action-panel glow-card">
+          <button class="action-btn" id="open-bank-modal" type="button">
+            <span class="btn-icon">🏦</span>
+            <span>Select Bank</span>
+          </button>
+          <button class="action-btn" id="refresh-data" type="button">
+            <span class="btn-icon">↻</span>
+            <span>Refresh Data</span>
+          </button>
+          <button class="action-btn" id="open-settings-modal" type="button">
+            <span class="btn-icon">⚙</span>
+            <span>Settings</span>
+          </button>
+        </aside>
+      </section>
+
+      <section class="dashboard-main glow-card">
+        <header class="main-header">
+          <div class="main-header-left">
+            <h1>Dashboard Buang Dana</h1>
+            <p id="dashboard-subtitle">Hari, Tanggal - Bulan - Tahun | 00:00:00</p>
+          </div>
+          <div class="header-logo-wrap" aria-label="Logo Latoto">
+            <img class="header-logo-image" src="./assets/logo-latoto.svg" alt="Latoto" />
+          </div>
+          <div class="sheet-mode-badge" id="sheet-mode-badge">Mode: Auto Detect</div>
+        </header>
+
+        <div class="bank-columns" id="bank-columns"></div>
+      </section>
+    </main>
+
+    <div class="modal-backdrop hidden" id="bank-modal-backdrop">
+      <section class="modal-panel select-bank-modal" aria-modal="true" role="dialog">
+        <header class="modal-header">
+          <div>
+            <h2>Select Bank Display</h2>
+            <p>Pilih area bank code yang ingin ditampilkan di dashboard utama.</p>
+          </div>
+          <button class="icon-close" data-close-modal="bank" type="button">✕</button>
+        </header>
+
+        <div class="modal-footer bank-modal-actions">
+          <div class="footer-actions left">
+            <button class="secondary-btn" id="select-all-banks" type="button">Select All</button>
+            <button class="secondary-btn" id="deselect-all-banks" type="button">Deselect All</button>
+          </div>
+          <div class="footer-actions right">
+            <button class="primary-btn" id="apply-bank-selection" type="button">Apply Display</button>
+          </div>
+        </div>
+
+        <div class="bank-select-grid" id="bank-select-grid"></div>
+      </section>
+    </div>
+
+    <div class="modal-backdrop hidden" id="settings-modal-backdrop">
+      <section class="modal-panel settings-modal" aria-modal="true" role="dialog">
+        <header class="modal-header">
+          <div>
+            <h2>Settings</h2>
+          </div>
+          <button class="icon-close" data-close-modal="settings" type="button">✕</button>
+        </header>
+
+        <form class="settings-form" id="settings-form">
+          <div class="settings-actions settings-actions-bar settings-modal-actions">
+            <button class="danger-btn" id="clear-settings" type="button">Hapus Data</button>
+            <div class="settings-actions-right">
+              <button class="secondary-btn" id="cancel-settings" type="button">Cancel</button>
+              <button class="primary-btn" type="submit">Save &amp; Extract</button>
+            </div>
+          </div>
+
+          <section class="settings-card">
+            <div class="settings-card-title">Data Source (Google Sheet)</div>
+
+            <label class="form-field full-span">
+              <span>Google Sheet Link</span>
+              <input
+                id="google-sheet-link"
+                type="text"
+                placeholder="https://docs.google.com/spreadsheets/d/..."
+              />
+            </label>
+
+            <div class="settings-shot-grid">
+              <label class="form-field">
+                <span>Sheet Name</span>
+                <input
+                  id="source-bank-select"
+                  type="text"
+                  list="source-bank-list"
+                  placeholder="Tempel atau ketik nama sheet"
+                />
+                <datalist id="source-bank-list"></datalist>
+              </label>
+
+              <label class="form-field">
+                <span>Area Kode</span>
+                <input id="area-code-display" type="text" placeholder="S6:EQ8" />
+              </label>
+
+              <label class="form-field">
+                <span>Range Balance</span>
+                <input
+                  id="range-start"
+                  type="text"
+                  value="A:A"
+                  placeholder="Contoh: A:A atau S10:EQ10"
+                />
+              </label>
+
+              <label class="form-field">
+                <span>Range Limit</span>
+                <input
+                  id="range-end"
+                  type="text"
+                  value="B:B"
+                  placeholder="Contoh: B:B atau S12:EQ12"
+                />
+              </label>
+            </div>
+
+            <div class="settings-mode-row">
+              <label class="form-field compact">
+                <span>Mode Baca</span>
+                <select id="orientation-mode">
+                  <option value="auto">Auto Detect</option>
+                  <option value="vertical">Vertical</option>
+                  <option value="horizontal">Horizontal</option>
+                </select>
+              </label>
+
+              <button class="secondary-btn" id="preview-range" type="button">Preview</button>
+            </div>
+
+            <div class="settings-preview" id="settings-preview">
+              Sistem akan membaca data sesuai mode yang dipilih.
+            </div>
+
+            <div class="settings-note">
+              Jika data sheet asli horizontal, sistem akan ubah menjadi vertikal saat render.
+              Jika data asli vertikal, sistem tetap membaca normal tanpa delay.
+            </div>
+
+            <div class="settings-preview" id="firebase-sync-status">
+              Firebase Sync nonaktif. Isi `firebase-config.js` untuk mengaktifkan sinkronisasi global.
+            </div>
+          </section>
+
+          <section class="settings-card">
+            <div class="settings-card-title">Desktop Background</div>
+
+            <div class="form-grid">
+              <label class="form-field">
+                <span>Choose A Fit For Your Desktop Image</span>
+                <select id="background-fit-select">
+                  <option value="fill">Fill</option>
+                  <option value="fit">Fit</option>
+                  <option value="stretch">Stretch</option>
+                  <option value="tile">Tile</option>
+                  <option value="center">Centre</option>
+                  <option value="span">Span</option>
+                </select>
+              </label>
+
+              <div class="form-field">
+                <span>Upload Or Paste Image</span>
+                <div class="background-image-tools">
+                  <label class="secondary-btn upload-btn" for="background-image-input">Upload Image</label>
+                  <input
+                    id="background-image-input"
+                    type="file"
+                    accept="image/png,image/jpeg,image/jpg,image/webp,image/gif"
+                    hidden
+                  />
+                  <button class="secondary-btn" id="clear-background-image" type="button">Clear Image</button>
+                </div>
+              </div>
+
+              <div class="form-field slideshow-field">
+                <span>Auto Slideshow</span>
+                <button class="secondary-btn background-slideshow-toggle" id="background-slideshow-toggle" type="button">
+                  Slideshow Off
+                </button>
+                <small class="slideshow-note">Putar otomatis tiap 10-15 detik dengan efek pergantian gambar acak dari gambar bawaan dan gambar upload.</small>
+              </div>
+            </div>
+
+            <div
+              class="background-paste-zone"
+              id="background-paste-zone"
+              tabindex="0"
+              role="button"
+              aria-label="Paste desktop background image here"
+            >
+              Paste image here with `Ctrl + V`, or use the upload button above.
+            </div>
+
+            <div class="background-library-head">
+              <div class="background-library-title">Pilih Gambar Bawaan Dashboard</div>
+              <div class="background-library-subtitle">
+                Klik salah satu background preset lalu simpan. Semua tab browser yang membuka dashboard ini akan ikut update.
+              </div>
+            </div>
+
+            <div class="background-preset-grid" id="background-preset-grid"></div>
+
+            <div class="background-preview" id="background-preview">
+              No desktop image selected.
+            </div>
+          </section>
+
+        </form>
+      </section>
+    </div>
+  </body>
+</html>

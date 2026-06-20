@@ -1,0 +1,320 @@
+{
+  "meta": {
+    "title": "Dashboard Buang Dana",
+    "subtitle": "Dashboard utama untuk kontrol bank, area code, limit, dan pengambilan range sheet secara fleksibel.",
+    "updatedAt": "2026-06-19 15:10 WIB"
+  },
+  "summary": {
+    "totalReady": 0,
+    "totalAmount": 154522402
+  },
+  "selectedBanks": [
+    "BCA",
+    "BNI",
+    "BRI",
+    "Antar Bank",
+    "Mandiri",
+    "Danamon",
+    "Tarik E-wallet"
+  ],
+  "banks": [
+    {
+      "id": "tarik-bca",
+      "name": "BCA",
+      "sourceKey": "bcaVertical",
+      "entries": [
+        {
+          "code": "BCA_Ramadhan_7487",
+          "amount": 7948510,
+          "limit": 11330000
+        },
+        {
+          "code": "BCA_Gilang_2551",
+          "amount": 5652504,
+          "limit": 9500000
+        },
+        {
+          "code": "BCA_MAHRANI_3246",
+          "amount": 3678567,
+          "limit": 8400000
+        },
+        {
+          "code": "BCA_DEDE_0981",
+          "amount": 3751704,
+          "limit": 9000000
+        },
+        {
+          "code": "BCA_Fahrizal_2371",
+          "amount": 10133664,
+          "limit": 11800000
+        },
+        {
+          "code": "BCA_Joni_6103",
+          "amount": 1121761,
+          "limit": 5500000
+        },
+        {
+          "code": "BCA_Iwan_1484",
+          "amount": 5081364,
+          "limit": 7600000
+        },
+        {
+          "code": "BCA_GUSTI_9991",
+          "amount": 9328162,
+          "limit": 12200000
+        }
+      ]
+    },
+    {
+      "id": "bni",
+      "name": "BNI",
+      "sourceKey": "bniHorizontal",
+      "entries": []
+    },
+    {
+      "id": "bri",
+      "name": "BRI",
+      "sourceKey": "briVertical",
+      "entries": []
+    },
+    {
+      "id": "antar-bank",
+      "name": "Antar Bank",
+      "sourceKey": "antarBankSynthetic",
+      "entries": []
+    },
+    {
+      "id": "mandiri",
+      "name": "Mandiri",
+      "sourceKey": "mandiriVertical",
+      "entries": []
+    },
+    {
+      "id": "danamon",
+      "name": "Danamon",
+      "sourceKey": "danamonHorizontal",
+      "entries": []
+    },
+    {
+      "id": "ewallet",
+      "name": "Tarik E-wallet",
+      "sourceKey": "ewalletSynthetic",
+      "entries": []
+    }
+  ],
+  "sheetSources": {
+    "bcaVertical": {
+      "orientation": "vertical",
+      "rows": [
+        ["BCA_Ramadhan_7487", 7948510, 11330000],
+        ["BCA_Gilang_2551", 5652504, 9500000],
+        ["BCA_MAHRANI_3246", 3678567, 8400000],
+        ["BCA_DEDE_0981", 3751704, 9000000],
+        ["BCA_Fahrizal_2371", 10133664, 11800000],
+        ["BCA_Joni_6103", 1121761, 5500000],
+        ["BCA_Iwan_1484", 5081364, 7600000],
+        ["BCA_GUSTI_9991", 9328162, 12200000]
+      ]
+    },
+    "bniHorizontal": {
+      "orientation": "horizontal",
+      "rows": [
+        ["BNI_Iryanto_6957", "BNI_Juriyanti_4089"],
+        [3276347, 5481500],
+        [6200000, 8900000]
+      ]
+    },
+    "briVertical": {
+      "orientation": "vertical",
+      "rows": [
+        ["BRI_HARDIYAN_3502", 8000693, 9600000],
+        ["BRI_Bintang_2506", 121422, 3000000],
+        ["BRI_Roby_2506", 5406544, 7200000],
+        ["BRI_Deni_2539", 8065047, 9800000]
+      ]
+    },
+    "seaHorizontal": {
+      "orientation": "horizontal",
+      "rows": [
+        ["BRI_Darwati_4503", "BRI_Sudomoro_98509", "BRI_Mufidet_4505", "BRI_Soledhuin_7503", "BRI_Setiaj_6500"],
+        [10852834, 248105, 2171999, 177864, 9611853],
+        [11900000, 1600000, 4100000, 2100000, 10250000]
+      ]
+    },
+    "mandiriVertical": {
+      "orientation": "vertical",
+      "rows": [
+        ["MANDIRI_ADE_1309", 5037485, 7800000],
+        ["MANDIRI_ARIEF_7957", 2405369, 5000000],
+        ["MANDIRI_SALSA_3451", 3545000, 6100000]
+      ]
+    },
+    "danamonHorizontal": {
+      "orientation": "horizontal",
+      "rows": [
+        ["DANAMON_Oktorlin_72", "DANAMON_Achmad_0319", "DANAMON_Ridwan_6003"],
+        [-1452300, 2587000, 3891000],
+        [3000000, 5000000, 6200000]
+      ]
+    },
+    "cimbSynthetic": {
+      "orientation": "vertical",
+      "rows": [
+        ["CIMB_DANI_7900", 2750000, 4000000]
+      ]
+    },
+    "antarBankSynthetic": {
+      "orientation": "vertical",
+      "rows": []
+    },
+    "ewalletSynthetic": {
+      "orientation": "vertical",
+      "rows": []
+    }
+  },
+  "backgroundPresets": [
+    {
+      "id": "bg-1",
+      "image": "./assets/backgrounds/bg 1.jpg"
+    },
+    {
+      "id": "bg-2",
+      "image": "./assets/backgrounds/bg 2.jpg"
+    },
+    {
+      "id": "bg-3",
+      "image": "./assets/backgrounds/bg 3.jpg"
+    },
+    {
+      "id": "bg-4",
+      "image": "./assets/backgrounds/bg 4.jpg"
+    },
+    {
+      "id": "bg-5",
+      "image": "./assets/backgrounds/bg 5.jpg"
+    },
+    {
+      "id": "bg-6",
+      "image": "./assets/backgrounds/bg 6.jpg"
+    },
+    {
+      "id": "bg-7",
+      "image": "./assets/backgrounds/bg 7.jpg"
+    },
+    {
+      "id": "bg-8",
+      "image": "./assets/backgrounds/bg 8.jpg"
+    },
+    {
+      "id": "bg-9",
+      "image": "./assets/backgrounds/bg 9.jpg"
+    }
+  ],
+  "optionColumnMap": {
+    "Tarik BCA": "BCA",
+    "BNI": "BNI",
+    "BRI": "BRI",
+    "Tarik BRI": "BRI",
+    "Mandiri": "Mandiri",
+    "Tarik Mandiri": "Mandiri",
+    "Danamon": "Danamon",
+    "Tarik Danamon": "Danamon",
+    "Tarik SEABANK": "Antar Bank",
+    "Tarik Seabank": "Antar Bank",
+    "Tarik BSI": "Antar Bank",
+    "Tarik JAGO": "Antar Bank",
+    "Tarik Antar Bank": "Antar Bank",
+    "Tarik Dana": "Tarik E-wallet",
+    "Tarik Linkaja": "Tarik E-wallet",
+    "Tarik Ovo": "Tarik E-wallet",
+    "Tarik Gopay": "Tarik E-wallet",
+    "Tarik E-wallet": "Tarik E-wallet",
+    "CIMB": "Tarik E-wallet"
+  },
+  "bankSelectionOptions": [
+    {
+      "code": "MDR_ANDRIAN_2895",
+      "bankOptions": ["BRI", "Tarik SEABANK", "Tarik Dana"]
+    },
+    {
+      "code": "BRI_HARDIYAN_3502",
+      "bankOptions": ["BRI", "Tarik SEABANK", "Tarik Dana"]
+    },
+    {
+      "code": "BCA_BUDAMAN_0894",
+      "bankOptions": ["Tarik BCA"]
+    },
+    {
+      "code": "BCA_SITI_AM_2756",
+      "bankOptions": ["Tarik BCA"]
+    },
+    {
+      "code": "BCA_GINA_RIFANI_9285",
+      "bankOptions": ["Tarik BCA"]
+    },
+    {
+      "code": "DANAMON_RIDWAN_6003",
+      "bankOptions": ["Danamon", "Tarik SEABANK", "Tarik BSI", "Tarik JAGO"]
+    },
+    {
+      "code": "BCA_SEPTIANIS_9971",
+      "bankOptions": ["Tarik BCA"]
+    },
+    {
+      "code": "BCA_FITRIAH_0455",
+      "bankOptions": ["Tarik BCA"]
+    },
+    {
+      "code": "BCA_AYUMNI_5819",
+      "bankOptions": ["Tarik BCA"]
+    },
+    {
+      "code": "DANAMON_ACHMAD_0319",
+      "bankOptions": ["Danamon", "Tarik SEABANK", "Tarik BSI", "Tarik JAGO"]
+    },
+    {
+      "code": "BCA_MELIARNI_4679",
+      "bankOptions": ["Tarik BCA"]
+    },
+    {
+      "code": "CIMB_DANI_7900",
+      "bankOptions": ["Tarik E-wallet"]
+    },
+    {
+      "code": "BRI_Darwati_4503",
+      "bankOptions": ["Tarik SEABANK", "Tarik BSI", "Tarik JAGO"]
+    },
+    {
+      "code": "BRI_Sudomoro_98509",
+      "bankOptions": ["Tarik SEABANK", "Tarik BSI", "Tarik JAGO"]
+    },
+    {
+      "code": "BRI_Mufidet_4505",
+      "bankOptions": ["Tarik SEABANK", "Tarik BSI", "Tarik JAGO"]
+    },
+    {
+      "code": "BRI_Soledhuin_7503",
+      "bankOptions": ["Tarik SEABANK", "Tarik BSI", "Tarik JAGO"]
+    },
+    {
+      "code": "BRI_Setiaj_6500",
+      "bankOptions": ["Tarik SEABANK", "Tarik BSI", "Tarik JAGO"]
+    },
+    {
+      "code": "DANAMON_Oktorlin_72",
+      "bankOptions": ["Danamon", "Tarik SEABANK", "Tarik BSI", "Tarik JAGO"]
+    },
+    {
+      "code": "BNI_Iryanto_6957",
+      "bankOptions": ["BNI", "Tarik Dana", "Tarik Linkaja", "Tarik Ovo", "Tarik Gopay"]
+    },
+    {
+      "code": "BNI_Juriyanti_4089",
+      "bankOptions": ["BNI", "Tarik Dana", "Tarik Linkaja", "Tarik Ovo", "Tarik Gopay"]
+    },
+    {
+      "code": "BRI_Deni_2539",
+      "bankOptions": ["BRI", "Tarik Dana", "Tarik Linkaja", "Tarik Ovo", "Tarik Gopay"]
+    }
+  ]
+}
