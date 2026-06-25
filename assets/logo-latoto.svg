@@ -1,15 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 200" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 220" role="img" aria-labelledby="title desc">
   <title id="title">Latoto Logo</title>
-  <desc id="desc">Gold and silver Latoto wordmark with crown.</desc>
+  <desc id="desc">Latoto logo with gold emblem, gold LA, silver TOTO, and a gold crown.</desc>
   <defs>
     <linearGradient id="goldFill" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#fff8d4"/>
-      <stop offset="14%" stop-color="#ffe88a"/>
-      <stop offset="28%" stop-color="#d79f1f"/>
-      <stop offset="44%" stop-color="#fff0aa"/>
+      <stop offset="10%" stop-color="#ffe88a"/>
+      <stop offset="26%" stop-color="#d79f1f"/>
+      <stop offset="42%" stop-color="#fff0aa"/>
       <stop offset="58%" stop-color="#b97808"/>
       <stop offset="78%" stop-color="#f4ca47"/>
       <stop offset="100%" stop-color="#fff0b0"/>
+    </linearGradient>
+    <linearGradient id="goldDeep" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffe387"/>
+      <stop offset="38%" stop-color="#f4c53a"/>
+      <stop offset="70%" stop-color="#b56f09"/>
+      <stop offset="100%" stop-color="#7a4100"/>
     </linearGradient>
     <linearGradient id="goldStroke" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#8e5600"/>
@@ -18,53 +24,62 @@
     </linearGradient>
     <linearGradient id="silverFill" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="18%" stop-color="#dbdbdb"/>
-      <stop offset="36%" stop-color="#9b9b9b"/>
-      <stop offset="52%" stop-color="#fafafa"/>
-      <stop offset="72%" stop-color="#b0b0b0"/>
+      <stop offset="18%" stop-color="#dcdcdc"/>
+      <stop offset="34%" stop-color="#9c9c9c"/>
+      <stop offset="50%" stop-color="#fdfdfd"/>
+      <stop offset="74%" stop-color="#b2b2b2"/>
       <stop offset="100%" stop-color="#ffffff"/>
     </linearGradient>
     <linearGradient id="silverStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#8e8e8e"/>
-      <stop offset="45%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#7f7f7f"/>
+      <stop offset="0%" stop-color="#8f8f8f"/>
+      <stop offset="48%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#727272"/>
     </linearGradient>
-    <filter id="softGlow" x="-25%" y="-25%" width="150%" height="150%">
-      <feDropShadow dx="0" dy="0" stdDeviation="2.2" flood-color="#f6d15a" flood-opacity="0.22"/>
-      <feDropShadow dx="0" dy="0" stdDeviation="7" flood-color="#f6d15a" flood-opacity="0.09"/>
+    <filter id="goldGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.4" flood-color="#f5cf56" flood-opacity="0.28"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="7.5" flood-color="#f5cf56" flood-opacity="0.1"/>
     </filter>
-    <filter id="silverGlow" x="-25%" y="-25%" width="150%" height="150%">
-      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#ffffff" flood-opacity="0.18"/>
-      <feDropShadow dx="0" dy="0" stdDeviation="6.5" flood-color="#ffffff" flood-opacity="0.07"/>
+    <filter id="silverGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.4" flood-color="#ffffff" flood-opacity="0.2"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="7.5" flood-color="#ffffff" flood-opacity="0.08"/>
     </filter>
-    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.85"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-    </linearGradient>
+    <filter id="crownGlow" x="-35%" y="-35%" width="170%" height="170%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#f6d15a" flood-opacity="0.26"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#f6d15a" flood-opacity="0.12"/>
+    </filter>
+    <clipPath id="emblemClip">
+      <path d="M26 182 90 24h34l68 158h-26l-17-40H72l-16 40Z"/>
+    </clipPath>
   </defs>
 
-  <g font-family="Georgia, Times New Roman, serif" font-weight="700" text-rendering="geometricPrecision">
-    <text x="8" y="150" font-size="150" fill="url(#goldFill)" stroke="url(#goldStroke)" stroke-width="2.7" filter="url(#softGlow)">A</text>
-    <text x="18" y="150" font-size="150" fill="none" stroke="#fff2bf" stroke-width="0.8" opacity="0.45">A</text>
-    <rect x="210" y="18" width="2.5" height="150" rx="1.25" fill="#fff8e1" opacity="0.96"/>
-    <text x="280" y="150" font-size="120" fill="url(#goldFill)" stroke="url(#goldStroke)" stroke-width="2.2" filter="url(#softGlow)">LA</text>
-    <text x="288" y="150" font-size="120" fill="none" stroke="#fff2bf" stroke-width="0.7" opacity="0.32">LA</text>
-    <text x="468" y="150" font-size="120" fill="url(#silverFill)" stroke="url(#silverStroke)" stroke-width="2.1" filter="url(#silverGlow)">TOTO</text>
-    <text x="476" y="150" font-size="120" fill="none" stroke="#ffffff" stroke-width="0.7" opacity="0.24">TOTO</text>
+  <g transform="translate(0 8)" filter="url(#goldGlow)">
+    <path d="M12 188 86 10h38l80 178h-35l-15-35h-76l-14 35Z" fill="none" stroke="url(#goldStroke)" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M40 188 96 34h18l60 154h-22l-14-38H76l-14 38Z" fill="none" stroke="#5e3000" stroke-opacity="0.65" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M84 150V76h31c25 0 40 10 40 34 0 26-18 40-46 40Zm20-18h25c15 0 25-8 25-22 0-12-8-18-23-18h-27Z" fill="none" stroke="url(#goldStroke)" stroke-width="3.4" stroke-linejoin="round"/>
+    <path d="M84 150V76h31c25 0 40 10 40 34 0 26-18 40-46 40Zm20-18h25c15 0 25-8 25-22 0-12-8-18-23-18h-27Z" fill="url(#goldFill)" opacity="0.92"/>
+    <g clip-path="url(#emblemClip)" opacity="0.72">
+      <path d="M-30 36h260v22H-30z" fill="#fff7c2" transform="rotate(-18 100 48)"/>
+      <path d="M-30 96h260v14H-30z" fill="#fff2ab" opacity="0.55" transform="rotate(-18 110 102)"/>
+    </g>
   </g>
 
-  <g transform="translate(612 4)">
-    <path d="M0 28 18 46 12 10Z" fill="url(#goldFill)" stroke="url(#goldStroke)" stroke-width="2"/>
-    <path d="M28 8 46 40 34 44Z" fill="url(#goldFill)" stroke="url(#goldStroke)" stroke-width="2"/>
-    <path d="M58 0 74 40 42 40Z" fill="url(#goldFill)" stroke="url(#goldStroke)" stroke-width="2"/>
-    <path d="M88 8 82 44 70 40Z" fill="url(#goldFill)" stroke="url(#goldStroke)" stroke-width="2"/>
-    <path d="M116 28 104 10 98 46Z" fill="url(#goldFill)" stroke="url(#goldStroke)" stroke-width="2"/>
-    <circle cx="10" cy="10" r="7" fill="#ffe487" stroke="#8a5900" stroke-width="2"/>
-    <circle cx="34" cy="4" r="7" fill="#ffe487" stroke="#8a5900" stroke-width="2"/>
-    <circle cx="58" cy="2" r="7" fill="#ffe487" stroke="#8a5900" stroke-width="2"/>
-    <circle cx="82" cy="4" r="7" fill="#ffe487" stroke="#8a5900" stroke-width="2"/>
-    <circle cx="106" cy="10" r="7" fill="#ffe487" stroke="#8a5900" stroke-width="2"/>
-    <path d="M4 44h108l-10 16H14Z" fill="url(#goldFill)" stroke="url(#goldStroke)" stroke-width="2"/>
+  <rect x="240" y="24" width="3" height="166" rx="1.5" fill="#fff7da" opacity="0.98"/>
+
+  <g font-family="Georgia, Times New Roman, serif" font-weight="700" text-rendering="geometricPrecision">
+    <text x="294" y="160" font-size="132" fill="url(#goldFill)" stroke="url(#goldStroke)" stroke-width="2.8" filter="url(#goldGlow)">LA</text>
+    <text x="304" y="160" font-size="132" fill="none" stroke="#fff2bf" stroke-width="0.95" opacity="0.4">LA</text>
+    <text x="492" y="160" font-size="132" fill="url(#silverFill)" stroke="url(#silverStroke)" stroke-width="2.6" filter="url(#silverGlow)">TOTO</text>
+    <text x="500" y="160" font-size="132" fill="none" stroke="#ffffff" stroke-width="0.85" opacity="0.28">TOTO</text>
+  </g>
+
+  <g transform="translate(642 8)" filter="url(#crownGlow)">
+    <path d="M8 54h104l-8 17H16Z" fill="url(#goldDeep)" stroke="url(#goldStroke)" stroke-width="2.6" stroke-linejoin="round"/>
+    <path d="M8 54 22 18l20 24 18-34 18 34 20-24 14 36" fill="none" stroke="url(#goldStroke)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8 54 22 18l20 24 18-34 18 34 20-24 14 36" fill="none" stroke="#fff2bf" stroke-opacity="0.35" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="22" cy="18" r="7" fill="url(#goldFill)" stroke="#8a5900" stroke-width="2"/>
+    <circle cx="42" cy="42" r="5.4" fill="url(#goldFill)" stroke="#8a5900" stroke-width="1.8"/>
+    <circle cx="60" cy="8" r="8" fill="url(#goldFill)" stroke="#8a5900" stroke-width="2"/>
+    <circle cx="78" cy="42" r="5.4" fill="url(#goldFill)" stroke="#8a5900" stroke-width="1.8"/>
+    <circle cx="98" cy="18" r="7" fill="url(#goldFill)" stroke="#8a5900" stroke-width="2"/>
   </g>
 </svg>

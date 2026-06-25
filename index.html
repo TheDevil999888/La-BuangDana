@@ -55,7 +55,7 @@
             <p id="dashboard-subtitle">Hari, Tanggal - Bulan - Tahun | 00:00:00</p>
           </div>
           <div class="header-logo-wrap" aria-label="Logo Latoto">
-            <img class="header-logo-image" src="./assets/logo-latoto.svg" alt="Latoto" />
+            <img class="header-logo-image" src="./assets/logo LATOTO.png" alt="Latoto" />
           </div>
           <div class="sheet-mode-badge" id="sheet-mode-badge">Mode: Auto Detect</div>
         </header>
@@ -102,7 +102,7 @@
             <button class="danger-btn" id="clear-settings" type="button">Hapus Data</button>
             <div class="settings-actions-right">
               <button class="secondary-btn" id="cancel-settings" type="button">Cancel</button>
-              <button class="primary-btn" type="submit">Save &amp; Extract</button>
+              <button class="primary-btn" id="save-settings" type="submit">Save &amp; Extract</button>
             </div>
           </div>
 
@@ -188,6 +188,15 @@
 
             <div class="form-grid">
               <label class="form-field">
+                <span>Background Source</span>
+                <select id="background-source-select">
+                  <option value="theme">Theme Gallery Image</option>
+                  <option value="preset">Built-in Image</option>
+                  <option value="custom">Upload / Paste Image</option>
+                </select>
+              </label>
+
+              <label class="form-field">
                 <span>Choose A Fit For Your Desktop Image</span>
                 <select id="background-fit-select">
                   <option value="fill">Fill</option>
@@ -246,7 +255,160 @@
             </div>
           </section>
 
+          <section class="settings-card theme-gallery-settings-card">
+            <div class="settings-card-title">Theme Gallery</div>
+            <div class="theme-gallery-settings-copy">
+              <strong id="theme-gallery-current-theme">Theme aktif: Default Dashboard</strong>
+              <span>
+                Theme Gallery terpisah dari gambar bawaan background. Pilih tema bergaya Opera
+                melalui gallery khusus agar tampilannya lebih fokus dan rapi.
+              </span>
+            </div>
+            <div class="theme-gallery-inline-actions">
+              <button class="secondary-btn theme-gallery-open-btn" id="open-theme-gallery" type="button">
+                Open Theme Gallery
+              </button>
+            </div>
+          </section>
+
         </form>
+      </section>
+    </div>
+
+    <div class="modal-backdrop hidden" id="theme-gallery-modal-backdrop">
+      <section class="modal-panel theme-gallery-modal" aria-modal="true" role="dialog">
+        <div class="theme-gallery-shell">
+          <div class="theme-gallery-topbar">
+            <div class="theme-gallery-topbar-icons">
+              <span class="theme-gallery-window-btn is-decorative" aria-hidden="true">☺</span>
+              <button class="theme-gallery-window-btn" data-close-modal="theme-gallery" type="button" aria-label="Close">
+                ✕
+              </button>
+            </div>
+            <h2>Theme Gallery</h2>
+          </div>
+
+          <div class="theme-gallery-grid-wrap">
+            <div class="theme-gallery-grid" id="theme-gallery-grid"></div>
+          </div>
+
+          <div class="theme-gallery-detail hidden" id="theme-gallery-detail">
+            <div class="theme-gallery-detail-backdrop" id="theme-gallery-detail-backdrop"></div>
+            <section class="theme-gallery-detail-panel">
+              <div class="theme-gallery-detail-head">
+                <button class="theme-gallery-back-btn" id="back-theme-gallery-detail" type="button">
+                  ← Back to themes
+                </button>
+                <div class="theme-gallery-detail-head-actions">
+                  <span class="theme-gallery-window-btn is-decorative" aria-hidden="true">☺</span>
+                  <button class="theme-gallery-window-btn" id="close-theme-gallery-detail" type="button" aria-label="Close">
+                    ✕
+                  </button>
+                </div>
+              </div>
+
+              <div class="theme-gallery-detail-body">
+                <section class="theme-gallery-detail-copy">
+                  <h3 id="theme-gallery-preview-title">Theme Preview</h3>
+                  <p id="theme-gallery-preview-description">
+                    Pilih salah satu tema untuk melihat preview lebih detail.
+                  </p>
+
+                  <div class="theme-gallery-detail-group">
+                    <span class="theme-gallery-detail-label">Mode</span>
+                    <div class="theme-gallery-mode-row">
+                      <button class="theme-gallery-mode-chip" data-theme-preview-mode="light" id="theme-gallery-mode-light" type="button">
+                        ☀
+                      </button>
+                      <button class="theme-gallery-mode-chip" data-theme-preview-mode="dark" id="theme-gallery-mode-dark" type="button">
+                        ☾
+                      </button>
+                      <button class="theme-gallery-mode-chip active" data-theme-preview-mode="all" id="theme-gallery-preview-mode" type="button">
+                        all modes
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="theme-gallery-detail-group">
+                    <span class="theme-gallery-detail-label">Sounds</span>
+                    <div class="theme-gallery-sound-list">
+                      <div class="theme-gallery-sound-item">
+                        <span>Browser Sounds</span>
+                        <button class="theme-gallery-toggle on" data-theme-sound-toggle="browser" type="button" aria-pressed="true"></button>
+                      </div>
+                      <div class="theme-gallery-sound-item">
+                        <span>Keyboard Sounds</span>
+                        <button class="theme-gallery-toggle on" data-theme-sound-toggle="keyboard" type="button" aria-pressed="true"></button>
+                      </div>
+                      <div class="theme-gallery-sound-item">
+                        <span>Background Music</span>
+                        <button class="theme-gallery-toggle on" data-theme-sound-toggle="music" type="button" aria-pressed="true"></button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="theme-gallery-detail-group">
+                    <span class="theme-gallery-detail-label">Wallpaper</span>
+                    <div class="theme-gallery-wallpaper-list">
+                      <div class="theme-gallery-wallpaper-item">
+                        <div class="theme-gallery-wallpaper-copy">
+                          <strong class="theme-gallery-wallpaper-title" id="theme-gallery-wallpaper-finish-title">Glossy Finish</strong>
+                          <span class="theme-gallery-wallpaper-subtitle" id="theme-gallery-wallpaper-finish-description">
+                            Latar utama memakai kilau lembut. Matikan untuk finish doff.
+                          </span>
+                        </div>
+                        <button
+                          class="theme-gallery-toggle on"
+                          data-theme-wallpaper-toggle="finish"
+                          id="theme-gallery-wallpaper-finish"
+                          type="button"
+                          aria-pressed="true"
+                        ></button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="theme-gallery-detail-group">
+                    <span class="theme-gallery-detail-label">Theme Color</span>
+                    <div class="theme-gallery-color-panel">
+                      <div class="theme-gallery-color-picker" id="theme-gallery-color-picker">
+                        <span class="theme-gallery-color-axis theme-gallery-color-axis-top">Borealis</span>
+                        <span class="theme-gallery-color-axis theme-gallery-color-axis-bottom">Australis</span>
+                        <span class="theme-gallery-color-axis theme-gallery-color-axis-left">Calm</span>
+                        <span class="theme-gallery-color-axis theme-gallery-color-axis-right">Active</span>
+                        <div class="theme-gallery-color-surface" id="theme-gallery-color-surface">
+                          <i class="theme-gallery-color-reference"></i>
+                          <button class="theme-gallery-color-handle" id="theme-gallery-color-handle" type="button" aria-label="Atur warna theme"></button>
+                        </div>
+                      </div>
+                      <div class="theme-gallery-color-meta">
+                        <strong id="theme-gallery-color-label">Calm Borealis</strong>
+                        <span id="theme-gallery-color-description">Tarik titik untuk mengubah warna theme seperti editor Opera.</span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="theme-gallery-preview-panel">
+                  <div class="theme-gallery-preview-stage">
+                    <div class="theme-gallery-preview-image" id="theme-gallery-preview-image">
+                      <div class="theme-gallery-preview-caption">
+                        <span class="theme-gallery-preview-kicker" id="theme-gallery-preview-kicker">Theme Gallery</span>
+                        <strong class="theme-gallery-preview-caption-title" id="theme-gallery-preview-caption-title">Theme Preview</strong>
+                        <span class="theme-gallery-preview-caption-mode" id="theme-gallery-preview-caption-mode">all modes</span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+
+              <div class="theme-gallery-preview-actions">
+                <button class="secondary-btn" id="close-theme-gallery" type="button">Reset Theme</button>
+                <button class="primary-btn" id="apply-theme-gallery" type="button">Set Theme</button>
+              </div>
+            </section>
+          </div>
+        </div>
       </section>
     </div>
   </body>
